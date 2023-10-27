@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Easyway POS System - Home</title>
+
+    <link rel="stylesheet" href="assets/css/nomalize.css">
+    <link rel="stylesheet" href="assets/fontawesome-free-6.4.2-web/css/all.min.css">
+    <link rel="stylesheet" href="assets/bootstrap-5.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/navbar_styles.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+</head>
+
+<body>
+
+
+<!--navbar-->
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark" id="navbar_home">
+    <div class="container-fluid">
+        <img src="assets/images/logo2.jpg" alt="Logo" width="80" height="80">
+        <a class="navbar-brand" href="#">EasyWay POS System</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" id="home-nav">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="customer-nav">Customer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="order-nav">Order</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="item-nav">Item</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sign In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Log Out</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<!--home section-->
+<div class="container position-relative" id="section_home">
+    <h1 class="text-center mt-3 text-white">Sale Terminal</h1>
+
+    <div class="row position-absolute" >
+        <!-- First Card -->
+        <div class="col-md-3 mb-3 position-absolute" style="width: 1300px; height: 240px">
+            <div class="card position-absolute top-0 start-0 " style="width: 450px ; height: 240px " id="flash-card01">
+                <div class="card-body">
+                    <h5 class="card-title">Items Sold Today</h5>
+                    <h4 class="card-text">200</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <div class="card position-absolute top-0 start-50 translate-middle-x " style="width: 450px ; height: 240px " id="flash-card02">
+                <div class="card-body">
+                    <h5 class="card-title">All Customers Today</h5>
+                    <h4 class="card-text">20</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row ">
+        <!-- Third Card -->
+        <div class="col-md-3 mb-3">
+            <div class="card" id="flash-card03">
+                <div class="card-body">
+                    <h5 class="card-title">New Customer Registration Today</h5>
+                    <h4 class="card-text">10</h4>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fourth Card -->
+        <div class="col-md-3 mb-3">
+            <div class="card" id="flash-card04">
+                <div class="card-body">
+                    <h5 class="card-title">Total Sales Today</h5>
+                    <h4 class="card-text">LKR 25 120.00</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+<!--customer section-->
+<div class="container" id="section_customer">
+    <h1 class="text-center mt-3 text-white">Customer</h1>
+
+    <!--    <div class="container table_container d-flex justify-content-center align-items-center" >-->
+    <!--        <input class="form-control me-2" type="search" placeholder="Search here" aria-label="Search">-->
+    <!--        <button class="btn btn-primary" type="submit">Search</button>-->
+    <!--    </div>-->
+    <div class="card">
+        <div class="card-body">
+
+            <!--            search bar-->
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button">Search</button>
+                </div>
+            </div>
+
+            <!--            view all button-->
+            <!--            <div class="float-right">-->
+            <!--                <button class="btn btn-primary">Button</button>-->
+            <!--            </div>-->
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="btn btn-primary me-md-2" type="button">Button</button>
+                <button class="btn btn-primary" type="button">Button</button>
+            </div>
+
+            <!--            table-->
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Customer Id</th>
+                    <th scope="col">Customer Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Contact</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>johndoe@example.com</td>
+                    <td>0715698245</td>
+                </tr>
+
+                </tbody>
+            </table>
+
+            <!-- Three buttons in one line -->
+            <div class="row">
+                <!--                <div class="col-12 text-right">-->
+                <!--                    <button class="btn btn-success">Button 1</button>-->
+                <!--                    <button class="btn btn-warning ml-2">Button 2</button>-->
+                <!--                    <button class="btn btn-danger ml-2">Button 3</button>-->
+                <!--                </div>-->
+
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button class="btn btn-primary me-md-2" type="button">Button</button>
+                    <button class="btn btn-primary" type="button">Button</button>
+                    <button class="btn btn-primary" type="button">Button</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!--order section-->
+<div class="container" id="section_order">
+    <h1 class="text-center mt-3 text-white">Order</h1>
+
+    <div class="card">
+        <div class="card-body">
+
+            <!--            search bar-->
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button">Search</button>
+                </div>
+            </div>
+
+            <!--            view all button-->
+            <div class="float-right">
+                <button class="btn btn-primary">Button</button>
+            </div>
+
+            <!-- Four text fields -->
+            <form class="mt-3">
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="field1">Order Id</label>
+                        <input type="text" class="form-control" id="field1" placeholder="Order Id">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="field2">Customer Id</label>
+                        <input type="text" class="form-control" id="field2" placeholder="Customer Id">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="field3">Date</label>
+                        <input type="text" class="form-control" id="field3" placeholder="Date">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="field4">Customer Name</label>
+                        <input type="text" class="form-control" id="field4" placeholder="Customer Name">
+                    </div>
+                </div>
+            </form>
+
+
+            <!-- Box for calculating total -->
+            <div class="total-box mt-3 p-3 " id="total-box">
+                <h5>Total: <span id="totalValue">0</span></h5>
+            </div>
+
+            <!--            table-->
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Item Id</th>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Unit Price</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>book</td>
+                    <td>Stationary Item</td>
+                    <td>20</td>
+                    <td>LKR. 200.00</td>
+                </tr>
+
+                </tbody>
+            </table>
+
+            <!-- Three buttons in one line -->
+            <div class="row">
+                <div class="col-12 text-right">
+                    <button class="btn btn-success">Button 1</button>
+                    <button class="btn btn-warning ml-2">Button 2</button>
+                    <button class="btn btn-danger ml-2">Button 3</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!--item section-->
+<div class="container" id="section_item">
+    <h1 class="text-center mt-3 text-white">Item</h1>
+
+    <div class="card">
+        <div class="card-body">
+
+            <!--            search bar-->
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button">Search</button>
+                </div>
+            </div>
+
+            <!--            view all button-->
+            <div class="float-right">
+                <button class="btn btn-primary">Button</button>
+            </div>
+
+            <!--            table-->
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Item Id</th>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Unit Price</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Soap</td>
+                    <td>washing item</td>
+                    <td>200</td>
+                    <td>LKR 135.00</td>
+                </tr>
+
+                </tbody>
+            </table>
+
+            <!-- Three buttons in one line -->
+            <div class="row">
+                <div class="col-12 text-right">
+                    <button class="btn btn-success">Button 1</button>
+                    <button class="btn btn-warning ml-2">Button 2</button>
+                    <button class="btn btn-danger ml-2">Button 3</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<script src="assets/lib/jquery.min.js"></script>
+<script src="assets/bootstrap-5.3.1-dist/js/bootstrap.min.js"></script>
+
+<script>
+
+    $('#section_customer').css('display', 'none');
+    $('#section_order').css('display', 'none');
+    $('#section_item').css('display', 'none');
+
+    $('#home-nav').on('click', () => {
+        $('#section-home').css('display', 'block');
+        $('#section_customer').css('display', 'none');
+        $('#section_order').css('display', 'none');
+        $('#section_item').css('display', 'none');
+    });
+
+    $('#customer-nav').on('click', () => {
+        $('#section_home').css('display', 'none');
+        $('#section_customer').css('display', 'block');
+        $('#section_order').css('display', 'none');
+        $('#section_item').css('display', 'none');
+    });
+
+    $('#order-nav').on('click', () => {
+        $('#section_home').css('display', 'none');
+        $('#section_customer').css('display', 'none');
+        $('#section_order').css('display', 'block');
+        $('#section_item').css('display', 'none');
+    });
+
+    $('#item-nav').on('click', () => {
+        $('#section_home').css('display', 'none');
+        $('#section_customer').css('display', 'none');
+        $('#section_order').css('display', 'none');
+        $('#section_item').css('display', 'block');
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+body{
+    background-color: #22577A;
+}
+
+#navbarNav{
+    margin-right: 30px;
+}
+
+#navbar_home > div > img {
+    margin-right: 20px;
+}
