@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="assets/bootstrap-5.3.1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/navbar_styles.css">
     <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 </head>
 
 <body>
@@ -101,79 +102,82 @@
 
 </div>
 
-<!--customer section-->
-<div class="container" id="section_customer">
-    <h1 class="text-center mt-3 text-white">Customer</h1>
+<!---------------------------------------customer section-------------------------------------------------------------->
 
-    <!--    <div class="container table_container d-flex justify-content-center align-items-center" >-->
-    <!--        <input class="form-control me-2" type="search" placeholder="Search here" aria-label="Search">-->
-    <!--        <button class="btn btn-primary" type="submit">Search</button>-->
-    <!--    </div>-->
-    <div class="card">
-        <div class="card-body">
+<section id="section_customer" class="mt-5">
 
-            <!--            search bar-->
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button">Search</button>
-                </div>
+    <div class="container">
+        <h1 class="text-center mt-3 text-white">Customer Management</h1>
+        <div class="row">
+
+            <!--customer form-->
+            <div class="col-6 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
+                <form>
+
+<!--                    <h2>Customer Management</h2>-->
+
+                    <div class="form-group mt-1">
+                        <label for="customer_id" class="text-white">Customer Id</label>
+                        <input type="number" class="form-control" id="customer_id" placeholder="Enter customer id">
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <label for="customer_first_name" class="text-white">Customer First Name</label>
+                        <input type="text" class="form-control" id="customer_first_name" placeholder="Enter customer first name">
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <label for="customer_last_name" class="text-white">Customer Last Name</label>
+                        <input type="text" class="form-control" id="customer_last_name" placeholder="Enter customer last name">
+                    </div>
+
+                    <div class="form-group mt-3 mb-5">
+                        <label for="customer_mobile" class="text-white">Customer Mobile</label>
+                        <input type="tel" class="form-control" id="customer_mobile" placeholder="Enter customer mobile number">
+                    </div>
+
+
+                    <div id="customer-btns">
+                        <button type="button" class="btn btn-success">Submit</button>
+                        <button type="button" class="btn btn-primary">Update</button>
+                        <button type="button" class="btn btn-danger">Delete</button>
+                        <button type="reset" class="btn btn-warning">Reset</button>
+                    </div>
+
+
+                </form>
             </div>
 
-            <!--            view all button-->
-            <!--            <div class="float-right">-->
-            <!--                <button class="btn btn-primary">Button</button>-->
-            <!--            </div>-->
+            <!--customer tbl-->
+            <div class="col-6 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
 
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button class="btn btn-primary me-md-2" type="button">Button</button>
-                <button class="btn btn-primary" type="button">Button</button>
-            </div>
+                <input type="text"  class="form-control mb-3 mt-5" id="customer_search" placeholder="search by first name">
 
-            <!--            table-->
-            <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">Customer Id</th>
-                    <th scope="col">Customer Name</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">Age</th>
-                    <th scope="col">Contact</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>johndoe@example.com</td>
-                    <td>0715698245</td>
-                </tr>
+                <table class="table">
 
-                </tbody>
-            </table>
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Customer Id</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Mobile Number</th>
+                    </tr>
+                    </thead>
 
-            <!-- Three buttons in one line -->
-            <div class="row">
-                <!--                <div class="col-12 text-right">-->
-                <!--                    <button class="btn btn-success">Button 1</button>-->
-                <!--                    <button class="btn btn-warning ml-2">Button 2</button>-->
-                <!--                    <button class="btn btn-danger ml-2">Button 3</button>-->
-                <!--                </div>-->
+                    <tbody id="customer-tbl-body"></tbody>
 
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <button class="btn btn-primary me-md-2" type="button">Button</button>
-                    <button class="btn btn-primary" type="button">Button</button>
-                    <button class="btn btn-primary" type="button">Button</button>
-                </div>
+                </table>
+
             </div>
 
         </div>
     </div>
 
-</div>
+</section>
 
-<!--order section-->
+
+
+<!----------------------------------------order section---------------------------------------------------------------->
 <div class="container" id="section_order">
     <h1 class="text-center mt-3 text-white">Order</h1>
 
@@ -318,6 +322,9 @@
 
 <script src="assets/lib/jquery.min.js"></script>
 <script src="assets/bootstrap-5.3.1-dist/js/bootstrap.min.js"></script>
+<script type="module" src="controller/CustomerController.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
 
