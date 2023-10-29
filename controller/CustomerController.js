@@ -71,6 +71,76 @@ $('#customer-btns>button').eq(0).on('click', () => {
 
 });
 
+//update customer
+$('#customer-btns >button').eq(1).on('click',()=>{
+    let customer_id = $('#customer_id').val();
+    let customer_first_name = $('#customer_first_name').val();
+    let customer_last_name = $('#customer_last_name').val();
+    let customer_mobile = $('#customer_mobile').val();
+
+    let customer_obj = new CustomerModel(customer_id,customer_first_name,customer_last_name,customer_mobile);
+
+    //find item index
+    let index = customer_db.findIndex(item => item.customer_id === customer_id);
+
+    //update item in the db
+    // customer_db[index] = customer_obj;
+
+    Swal.fire({
+        title: 'Do you want to save the changes?',
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: 'Save',
+        denyButtonText: `Don't save`,
+    }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+            customer_db[index] = customer_obj;
+            loadCustomers();
+            Swal.fire('Saved!', '', 'success')
+        } else if (result.isDenied) {
+            Swal.fire('Changes are not saved', '', 'info')
+        }
+    })
+
+    //load customer data
+    // loadCustomers();
+})
+
+//delete customer
+$('#customer-btns >button').eq(2).on('click',()=>{
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+
+            let customer_id = $("#customer-id").val();
+
+            // find item index
+            let index = customer_db.findIndex(item => item.customer_id === customer_id);
+
+            // remove the item from the db
+            customer_db.splice(index, 1);
+
+            Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+            )
+
+            $("#customer-btns>button[type='reset']").click();
+
+            // load student data
+            loadCustomers();
+        }
+    })
+})
 
 //fill customer
 $('#customer-tbl-body').on('click', 'tr' , function() {
@@ -92,8 +162,8 @@ $('#customer-tbl-body').on('click', 'tr' , function() {
 //search
 $("#customer_search").on('input', ()=>{
     let search_term = $('#customer_search').val();
-    console.log(search_term);
-    let results = customer_db.filter((item) => item.customer_first_name.startsWith(search_term.toLowerCase()) || item.customer_last_name.startsWith(search_term.toLowerCase()) || item.customer_mobile.startsWith(search_term));
+
+    let results = customer_db.filter((item) => item.customer_first_name.toLowerCase().startsWith(search_term.toLowerCase()) || item.customer_last_name.toLowerCase().startsWith(search_term.toLowerCase()) || item.customer_mobile.startsWith(search_term));
     console.log(results);
 
     $('#customer-tbl-body').empty();
